@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<!--引用flexlides所需要的cdn-->
+		<link href="//cdn.bootcss.com/flexslider/2.6.3/flexslider.min.css" rel="stylesheet">
+		<script src="//cdn.bootcss.com/jquery/2.2.2/jquery.min.js"></script>
+		<script src="//cdn.bootcss.com/flexslider/2.6.3/jquery.flexslider-min.js"></script>
+	</head>
+	<style type="text/css">
+		.flex-control-nav{
+			height: 70px;
+		}
+		.flex-control-paging li a{
+			background: white;
+		}
+		body{
+			margin: 0 auto;
+			padding: 0;
+			background-color: rgba(245,245,245);
+		}
+		
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#one>li{
+			list-style: none;
+			margin-left: 55px;
+			line-height: 40px;
+			color: white;
+			text-decoration: none;
+			float: left;
+		}
+		ul{
+			list-style: none;
+		}
+		.drop-down{
+			height: 40px;
+		}
+		.drop-down li{
+			text-align: center;
+			background-color: rgb(0,112,184);
+			height: 30px;
+			width: 80px;
+		}
+		.drop-down-content{
+			padding: 0;
+			z-index: 99;
+			opacity: 0;
+		}
+		.flexslider{
+			z-index: -99;
+			margin-bottom: 10px;
+		}
+		#one .drop-down:hover .drop-down-content{
+			opacity: 1;
+		}
+		.drop-down-content li:hover a{
+			background-color: deepskyblue;
+		}
+		a{
+			width: 80px;
+			display: block;
+			height: 30px;
+			list-style: none;
+			text-decoration: none;
+			color: white;
+		}
+		#content{
+			height: 1580px;
+			width: 1300px;
+			background-color: rgba(245,245,245);
+			margin-left: 280px;
+		}
+		#tupian img{
+			width: 370px;
+			height: 400px;
+		}
+		#tupian{
+			width: 370px;
+			height: 400px;
+			overflow: hidden;
+		}
+		#xiabiao li{
+			width: 15px;
+			height: 15px;
+			background-color: white;
+			color: black;
+			float: left;
+			margin-left: 3px;
+		}
+		#xiabiao li:hover{
+			background-color: red;
+			cursor: pointer;
+		}
+		#youwenzi li a{
+			color: black;
+			width: 300px;
+			font-size: 13px;
+			height: 50px;
+			line-height: 30px;
+		}
+		#youwenzi li>span{
+			float: right;
+			margin-right:10px ;
+			font-size: 10px;
+			line-height: 30px;
+		}
+		#youwenzi li>a{
+			white-space:nowrap;          /*不换行*/
+            text-overflow: ellipsis;         /*超出的显示省略号*/
+           overflow: hidden;
+		}
+		#youwenziyi li a{
+			color: black;
+			width: 300px;
+			font-size: 13px;
+			height: 45px;
+		}
+		#youwenziyi li>span{
+			float: right;
+			margin-right:10px ;
+			font-size: 10px;
+		}
+		#youwenziyi li>a{
+			white-space:nowrap;          
+            text-overflow: ellipsis;         
+           overflow: hidden;
+		}
+		.heng li{
+			float: left;
+			margin:35px 82px;
+		}
+		dl ,dt, dd{
+			float: left;
+		}
+		dl dd a{
+			float: left;
+			line-height: 80px;
+			width: 180px;
+			color: black;
+			display: block;
+			margin-left: 25px;
+		}
+		#gun ul li{
+			float: left;
+			margin-left: 40px;
+			margin-top: 30px;
+		}
+		ol{
+			display: none;
+		}
+		
+	</style>
+	<body>
+		<div id="fix"style="width: 120px;height: 50px;background-color: dodgerblue;position: fixed;color:white;font-size: 29px;margin-left: 1780px;margin-top: 300px;">
+			<a href="">>客服</a>
+		</div>
+		<div id="title" style="padding-right: 230px;padding-left: 60px;">
+		<p style="margin-left: 200px;">
+			<img src="img/7.png"/>
+			<span style="float: right;">
+				<input type="text" value="" placeholder="请输入搜索关键字" 	style="height: 40px;width: 300px; border: 1px solid rgb(0,112,184);"/>
+				<input type="button" value="搜索" style="background: rgb(0,112,184);height: 45px;border-radius:0px;width:80px;border: 1px solid  white;color:white"/>
+		</span>
+		</p>
+		</div>
+		<div id="shouye" style="width: 1550px;height: 40px;background: rgb(0,112,184);padding-left: 170px;padding-right: 250px;color: white;">
+			<ul id="one">
+				<li>首页</li>
+				<li class="drop-down">
+					学校概况
+					<ul class="drop-down-content">
+						<li><a href="">现任领导</a></li>
+						<li><a href="">学校简介</a></li>
+						<li><a href="">机构职能</a></li>
+						<li><a href="">学校风景</a></li>
+						<li><a href="">地理位置</a></li>
+					</ul>
+				</li>
+				<li class="drop-down">
+					专业建设
+					<ul class="drop-down-content">
+						<li><a href="">播音主持</a></li>
+						<li><a href="">广播节目</a></li>
+						<li><a href="">城市轨道</a></li>
+						<li><a href="">会计学</a></li>
+						<li><a href="">导游</a></li>
+						<li><a href="">计算机应用</a></li>
+						<li><a href="">汽车制造</a></li>
+						<li><a href="">电子技术</a></li>
+						<li><a href="">美术设计</a></li>
+						<li><a href="">舞蹈表演</a></li>
+					</ul>
+				</li>
+				<li class="drop-down">
+					科学教研
+					<ul class="drop-down-content">
+						<li><a href="">教学动态</a></li>
+						<li><a href="">教学教研</a></li>
+						<li><a href="">精品课程</a></li>
+						<li><a href="">师资队伍</a></li>
+					</ul>
+				</li>
+				<li class="drop-down">
+					学生工作
+					<ul class="drop-down-content">
+						<li><a href="">学生动态</a></li>
+						<li><a href="">学生帮助</a></li>
+						<li><a href="">社团活动</a></li>
+						<li><a href="">作品展示</a></li>
+					</ul>
+				</li>
+				<li class="drop-down">
+					招生就业
+					<ul class="drop-down-content">
+						<li><a href="">招生简介</a></li>
+						<li><a href="">招生答疑</a></li>
+						<li><a href="">在线报名</a></li>
+						<li><a href="">就业信息</a></li>
+					</ul>
+				</li>
+				<li class="drop-down">
+					党群工作
+				<ul class="drop-down-content">
+					<li><a href="">党务工作</a></li>
+					<li><a href="">团委工作</a></li>
+					<li><a href="">工会工作</a></li>
+				</ul>
+				</li>
+				<li class="drop-down">
+					实习实训
+					<ul class="drop-down-content">
+						<li><a href="">办学设施</a></li>
+						<li><a href="">实习基地</a></li>
+					</ul>
+				</li>
+				<li>继续教育</li>
+				<li>学校荣誉</li>
+				<li>校友会</li>
+				<li class="drop-down">
+					在线答疑
+					<ul class="drop-down-content">
+						<li><a href="">在线留言</a></li>
+						<li><a href="">留言列表</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<div class="flexslider">
+			<ul class="slides">
+				<li><img src="img/1.png"/></li>
+				<li><img src="img/2.png"/></li>
+				<li><img src="img/6.png"/></li>
+			</ul>
+		</div>
+		<div id="content">
+			<div id="diyiyi" style="width: 750px;height: 450px;background-color: white;float: left;">
+				<span style="height: 3px;width: 100px;background-color: rgba(2,139,255);float: left;"></span>
+				<p class="school" style="height: 50px;line-height: 50px;">
+					<span style="color: blue;font-size: 20px;float: left;position: relative;left: -100px;">
+						学校动态
+					</span>
+						<span style="float: right;width: 60px;height: 38px;background-color: rgba(2,139,255);color: white;font-size: 15px;text-align: center;line-height: 38px;">
+							more
+						</span>
+				</p>
+				<div class="zuo" style="width: 370px;height: 400px;float: left;">
+					<ul id="tupian">
+						<li><img src="img/4.jpg"/></li>
+						<li><img src="img/5.jpg"/></li>
+						<li><img src="img/8.jpg"/></li>
+					</ul>
+					<span style="width:370px;height:60px;background-color: black;position: relative;display: block;top: -60px;opacity: 0.5;">
+					</span>
+					<ul id="xiabiao" style="float: right;position: relative;top: -90px;">
+						<li>1</li>
+						<li>2</li>
+						<li>3</li>
+					</ul>
+				</div>
+				<div class="you" style="width: 370px;height: 400px;float: right;">
+				<ul id="youwenzi">
+                    <li><span>06/22</span><a href="/xueyuanxinxi/xueyuandongtai/2020-06-22/357.html" target="_blank" title="郭忠同志调研湖北省广播电视学校疫情防控和教育教学工作"> &#10148郭忠同志调研湖北省广播电视学校疫情防控和教育教学工作</a></li>
+			        <li><span>04/16</span><a href="/xueyuanxinxi/xueyuandongtai/2020-04-16/353.html" target="_blank" title=" 湖北省广播电视学校-中等职业教育质量年度报告（2019）"> &#10148湖北省广播电视学校-中等职业教育质量年度报告（2019）</a></li>
+			        <li><span>04/14</span><a href="/xueyuanxinxi/xueyuandongtai/2020-04-14/352.html" target="_blank" title="艺术高考给你惊艳的答案——湖北省广播电视学校">&#10148艺术高考给你惊艳的答案——湖北省广播电视学校</a></li>
+			        <li><span>11/22</span><a href="/xueyuanxinxi/xueyuandongtai/2019-11-22/351.html" target="_blank" title="台（集团）党委副书记、机关党委书记 黄传泽来我校调研指导工作">&#10148台（集团）党委副书记、机关党委书记 黄传泽来我校调研指导工作</a></li>
+			        <li><span>05/15</span><a href="/xueyuanxinxi/xueyuandongtai/2019-05-15/340.html" target="_blank" title="2019年招生简章">&#10148 2019年招生简章</a></li>
+			        <li><span>01/02</span><a href="/xueyuanxinxi/xueyuandongtai/2019-01-02/324.html" target="_blank" title="大佬做客湖北广校，揭露长江云的媒体融合发展之路">&#10148大佬做客湖北广校，揭露长江云的媒体融合发展之路</a></li>
+			        <li><span>12/25</span><a href="/xueyuanxinxi/xueyuandongtai/2018-12-25/321.html" target="_blank" title="凝心聚力———我校开展教师团建活动">&#10148凝心聚力———我校开展教师团建活动</a></li>
+			        <li><span>11/30</span><a href="/xueyuanxinxi/xueyuandongtai/2018-11-30/314.html" target="_blank" title="招生简章">&#10148招生简章</a></li>
+		        </ul>
+				</div>
+			</div>
+			
+			<div id="diyier" style="background-color: white;width: 500px;height: 450px;float: right;margin-bottom: 58px;">
+				<p class="school" style="height: 50px;line-height: 50px;">
+					<span style="height: 3px;width: 100px;background-color: rgba(2,139,255);float: left;"></span>
+					<span style="color: blue;font-size: 20px;position: relative;left: -100px;">
+						通知公告
+					</span>
+						<span style="float: right;width: 60px;height: 38px;background-color: rgba(2,139,255);color: white;font-size: 15px;text-align: center;line-height: 38px;">
+							more
+						</span>
+				</p>
+				<ul id="youwenzi">
+               <li><span>06/18</span><a href="/xueyuanxinxi/tongzhigonggao/2020-06-18/356.html" target="_blank" title="湖北省广播电视学校二层楼闲置宿舍增补项目工程竞争性磋商公告">&#10148湖北省广播电视学校二层楼闲置宿舍增补项目工程竞争性磋商公告</a></li>
+		        <li><span>05/20</span><a href="/xueyuanxinxi/tongzhigonggao/2020-05-20/354.html" target="_blank" title="关于发放我校2020届大中专毕业生一次性求职创业补贴的通知">&#10148关于发放我校2020届大中专毕业生一次性求职创业补贴的通知</a></li>
+		        <li><span>11/09</span><a href="/xueyuanxinxi/tongzhigonggao/2019-11-01/348.html" target="_blank" title="家属楼水改项目工程竞争性磋商公告">&#10148家属楼水改项目工程竞争性磋商公告</a></li>
+		        <li><span>09/12</span><a href="/xueyuanxinxi/tongzhigonggao/2019-09-12/346.html" target="_blank" title="询价函">&#10148询价函</a></li>
+		        <li><span>12/03</span><a href="/xueyuanxinxi/tongzhigonggao/2018-12-03/315.html" target="_blank" title="喜讯">&#10148喜讯</a></li>
+		        <li><span>08/25</span><a href="/xueyuanxinxi/tongzhigonggao/2018-08-17/306.html" target="_blank" title="湖北省广播电视学校多媒体教室采购项目招标书">&#10148湖北省广播电视学校多媒体教室采购项目招标书</a></li>
+		        <li><span>03/30</span><a href="/xueyuanxinxi/tongzhigonggao/2018-3-30/45.html" target="_blank" title="关于“清明节”放假时间的通知">&#10148关于“清明节”放假时间的通知</a></li>
+		        <li><span>11/06</span><a href="/xueyuanxinxi/tongzhigonggao/2015-11-6/44.html" target="_blank" title="广校全体党员集体参观省博物馆">&#10148广校全体党员集体参观省博物馆</a></li>
+		    </ul>
+			</div>
+			<div id="center" style="width: 1300px;height: 400px;float: left;">
+				<div id="dieryi" style="width: 400px;height: 400px;background-color: white;float: left;">
+				<p class="school" style="height: 50px;line-height: 50px;">
+					<span style="height: 3px;width: 100px;background-color: rgba(2,139,255);float: left;"></span>
+					<span style="color: blue;font-size: 20px;position: relative;left: -100px;">
+						学生工作
+					</span>
+						<span style="float: right;width: 60px;height: 38px;background-color: rgba(2,139,255);color: white;font-size: 15px;text-align: center;line-height: 38px;">
+							more
+						</span>
+				</p>
+		<ul id="youwenziyi">
+           <li><span>[2019-05-15] </span><a href="/xueshenggongzuo/xueshengdongtai/2019-05-15/339.html" target="_blank">&#10148 2019年湖北省广播电视学校招生简章</a></li>
+          <li><span>[2019-01-28] </span><a href="/xueshenggongzuo/xueshengdongtai/2019-01-28/327.html" target="_blank">&#10148家校携手 共筑未来</a></li>
+          <li><span>[2019-01-02] </span><a href="/xueshenggongzuo/xueshengdongtai/2019-01-02/326.html" target="_blank">&#10148笑的时候温暖，爱的时候勇敢</a></li>
+          <li><span>[2019-01-02] </span><a href="/xueshenggongzuo/xueshengdongtai/2019-01-02/325.html" target="_blank">&#10148我校举办“简历制作技巧”专题讲座</a></li>
+          <li><span>[2018-12-12] </span><a href="/xueshenggongzuo/xueshengdongtai/2018-12-12/320.html" target="_blank">&#10148打造平安和谐校园开展法制宣传进校园讲座</a></li>
+          <li><span>[2018-12-12] </span><a href="/xueshenggongzuo/xueshengdongtai/2018-12-12/319.html" target="_blank"> &#10148我校举办急救知识培训讲座</a></li>
+          <li><span>[2018-12-04] </span><a href="/xueshenggongzuo/xueshengdongtai/2018-12-04/317.html" target="_blank">&#10148我校校园消防应急安全演练</a></li>
+          <li><span>[2018-12-04] </span><a href="/xueshenggongzuo/xueshengdongtai/2018-12-04/316.html" target="_blank">&#10148校学生科召开学生家长会</a></li>
+        </ul>
+				</div>
+				<div id="dierer" style="width: 400px;height: 400px;background-color: white;float: left;margin-left: 50px;">
+					<p class="school" style="height: 50px;line-height: 50px;">
+					<span style="height: 3px;width: 100px;background-color: rgba(2,139,255);float: left;"></span>
+					<span style="color: blue;font-size: 20px;position: relative;left: -100px;">
+						招生就业
+					</span>
+						<span style="float: right;width: 60px;height: 38px;background-color: rgba(2,139,255);color: white;font-size: 15px;text-align: center;line-height: 38px;">
+							more
+						</span>
+				</p>
+				<ul id="youwenziyi">
+             <li><span>[2020-06-12] </span><a href="/zhaoshengjiuye/zhaoshengjianzhang/2020-06-12/355.html" target="_blank">&#10148 2020年湖北省广播电视学校招生简章</a></li>
+          <li><span>[2019-05-15] </span><a href="/zhaoshengjiuye/zhaoshengjianzhang/2019-05-15/338.html" target="_blank">&#10148 2019年湖北省广播电视学校招生简章</a></li>
+          <li><span>[2018-06-07] </span><a href="/zhaoshengjiuye/jiuyexinxi/2018-06-07/304.html" target="_blank">&#10148招聘单位：丰疆智能数据公司</a></li>
+          <li><span>[2018-06-07] </span><a href="/zhaoshengjiuye/jiuyexinxi/2018-06-07/300.html" target="_blank">&#10148招聘单位 ：武汉和睿达房地产顾问有限公司</a></li>
+          <li><span>[2018-06-07] </span><a href="/zhaoshengjiuye/jiuyexinxi/2018-06-07/299.html" target="_blank">&#10148招聘单位：  湖北欣瑞汽车销售服务有限公司</a></li>
+          <li><span>[2018-06-07] </span><a href="/zhaoshengjiuye/jiuyexinxi/2018-06-07/298.html" target="_blank">&#10148招聘单位：湖北融信华睿投资管理有限公司</a></li>
+          <li><span>[2018-06-07] </span><a href="/zhaoshengjiuye/jiuyexinxi/2018-06-07/297.html" target="_blank">&#10148招聘单位：湖北玖玖泉涌国际文化传媒有限公司</a></li>
+          <li><span>[2018-06-07] </span><a href="/zhaoshengjiuye/jiuyexinxi/2018-06-07/296.html" target="_blank">&#10148招聘单位：阿里巴巴招聘客服人员</a></li>
+        </ul>
+				</div>
+				<div id="diersan" style="width: 400px;height: 400px;background-color: white;float: left;margin-left: 50px;">
+					<p class="school" style="height: 50px;line-height: 50px;">
+					<span style="height: 3px;width: 100px;background-color: rgba(2,139,255);float: left;"></span>
+					<span style="color: blue;font-size: 20px;position: relative;left: -100px;">
+						党群工作
+					</span>
+						<span style="float: right;width: 60px;height: 38px;background-color: rgba(2,139,255);color: white;font-size: 15px;text-align: center;line-height: 38px;">
+							more
+						</span>
+				</p>
+				<ul id="youwenziyi">
+          <li><span>[2019-05-21] </span><a href="/dangqungongzuo/dangwugongzuo/2019-05-21/344.html" target="_blank">&#10148学校组织全校教职工集中观看警示教育片</a></li>
+          <li><span>[2019-05-21] </span><a href="/dangqungongzuo/dangwugongzuo/2019-05-21/343.html" target="_blank">&#10148 2019年5月主题党日活动流程</a></li>
+          <li><span>[2019-05-21] </span><a href="/dangqungongzuo/dangwugongzuo/2019-05-21/342.html" target="_blank">&#10148 2019年4月主题党日活动流程</a></li>
+          <li><span>[2019-05-21] </span><a href="/dangqungongzuo/dangwugongzuo/2019-05-21/341.html" target="_blank">&#10148 2019年3月主题党日活动流程</a></li>
+          <li><span>[2019-03-04] </span><a href="/dangqungongzuo/dangwugongzuo/2019-03-04/337.html" target="_blank">&#10148 2019年2月主题党日活动流程</a></li>
+          <li><span>[2019-03-04] </span><a href="/dangqungongzuo/dangwugongzuo/2019-03-04/336.html" target="_blank">&#10148 2019年1月主题党日活动流程</a></li>
+          <li><span>[2019-02-28] </span><a href="/dangqungongzuo/dangwugongzuo/2019-02-28/335.html" target="_blank">&#10148 2018年12月主题党日活动流程</a></li>
+          <li><span>[2019-02-28] </span><a href="/dangqungongzuo/dangwugongzuo/2019-02-28/334.html" target="_blank">&#10148 2018年11月主题党日活动流程</a></li>
+        </ul>
+				</div>
+			</div>
+			<div class="tiao"style="width: 1300px;height: 200px;background-color: white;float: left;margin-top: 30px;">
+				<ul class="heng">
+					<li><img src="img/10.png"/></li>
+					<li><img src="img/11.png"/></li>
+					<li><img src="img/12.png"/></li>
+				</ul>
+			</div>
+			<div class="gundong" style="width: 1300px;height: 300px;background-color: white;float: left;margin-top: 30px;">
+				<p class="school" style="height: 50px;line-height: 50px;">
+					<span style="height: 3px;width: 100px;background-color: rgba(2,139,255);float: left;"></span>
+					<span style="color: blue;font-size: 20px;position: relative;left: -100px;">
+						通知公告
+					</span>
+						<span style="float: right;width: 60px;height: 38px;background-color: rgba(2,139,255);color: white;font-size: 15px;text-align: center;line-height: 38px;">
+							more
+						</span>
+				</p>
+					<div id="gun">
+						<ul class="slides"> 
+							<li><img src="img/100.png"><img src="img/200.png"/><img src="img/300.png"/><img src="img/400.png"/></li>
+							<li><img src="img/500.png"/><img src="img/600.png"/><img src="img/200.png"/><img src="img/300.png"/></li>
+							<li><img src="img/20.png"/><img src="img/600.png"/><img src="img/100.png"/><img src="img/200.png"/></li>
+ 						</ul>
+					</div>
+			</div>
+			<div id="xiao" style="width: 1300px;height: 80px;background-color: white;float: left;margin-top: 32px;">
+				<dl>
+					<dt>
+				<img src="img/link-ti.gif" style="height: 80px;width: 80px;"/>
+					</dt>
+					<dd>
+						  <a href="http://www.hbtv.com.cn" target="_blank">湖北网络广播电视台　|</a>　
+						　<a href="http://www.whbc.com.cn" target="_blank">武汉广电网　|</a>　
+						　<a href="http://www.chinatvet.com" target="_blank">中国职业技术教育网　|</a>　
+						　<a href="http://www.xtyk.me" target="_blank">传媒中心　|</a>　
+						　<a href="http://www.i916.com.cn" target="_blank">楚天卫星广播　|</a>　
+　                                        </dd>
+				</dl>
+			</div>
+			
+		</div>
+		<div id="end" style="background-color: rgba(51,51,51); height: 80px;width: 2000px;text-align: center;color: white;padding-top: 30px;">
+			<span> 校址：湖北省武汉市汉阳区十里铺高家咀特1号　　邮编：430051　　电话：027-84624505　　传真：027-51470202 </span><br />
+			<span>国家信息产业部ICP备案：鄂ICP备06006034号 　 版权所有　　湖北省广播电视学校 </span>
+		</div>
+	</body>
+	<script type="text/javascript">
+		$(function(){
+			$(".flexslider").flexslider({
+//				绑定ul
+				 animation:"slide",
+				 slideDirection:"horizontal",
+				 slideshow:true,
+				 slideshowSpeed:2000,
+				 directionNav: false, 
+				 animationLoop: true,
+			})
+		});
+//		使当前的指针的下标所代表的图片显示,其他兄弟隐藏
+		$('#xiabiao>li').mouseover(function(){
+			var index=$(this).index();
+			$('#tupian>li:eq('+index+')').siblings('li').hide();
+			$('#tupian>li:eq('+index+')').show();
+		});
+		$(function(){
+			$("#gun").flexslider({
+				 animation:"slide",
+				 slideDirection:"horizontal",
+				 slideshowSpeed:2000,
+				 directionNav: false, 
+				 animationLoop: true,
+				  pauseOnHover: true,
+			})
+		});
+		
+		
+		
+	</script>
+	
+</html>
