@@ -1,0 +1,146 @@
+body,h1,h2,h3,h4,h5,h6,ul,li,p,section,article,video,audio{
+    margin: 0px;
+    padding: 0px;
+}
+img,input{
+    border: none;
+}
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+body{
+    font-family: arial;
+    background: #101528 url(../img/body-bg.jpg) no-repeat center top;
+}
+.wrap{
+    width: 980px;
+    margin: 0px auto;
+}
+header{
+    height: 119px;
+}
+header a{
+    padding-top: 40px;
+    display: block;
+}
+nav{
+    height: 40px;
+    background: #888;
+    border-radius: 6px;
+    box-shadow: 0 5 10px rgba(0,0,0,.5);
+}
+nav ul{
+    float: left;
+    padding-left: 27px;
+}
+nav ul li{
+    float: left;
+    padding-left: 30px;
+    font-size: 14px;
+    height: 40px;
+    line-height: 40px;
+}
+nav li a{
+    color: #fff;
+    text-shadow: 1px 3px 3px rgba(0,0,0,.5);
+}
+nav form{
+    float: right;
+}
+nav input{
+    width: 130px;
+    height: 27px;
+    background: #fff;
+    border-radius: 4px;
+    margin: 7px 10px 0 0;
+    padding-left: 10px;
+    font-size: 13px;
+    color: #a7a6ac;
+}
+section{
+    margin-top: 30px;
+}
+article{
+    width: 600px;
+    padding: 0 35px;
+    float: left;
+    background: #fff;
+    border-radius: 7px;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
+}
+article h3{
+    font-size: 20px;
+    color: #060007;
+    height: 31px;
+    line-height: 31px;
+    padding-top: 32px;
+}
+article time{
+    height: 25px;
+    line-height: 25px;
+    font-size: 12px;
+    color: #010007;
+}
+article .pic{
+    padding-top: 9px;
+    font-size: 0;
+}
+article p{
+    font-size: 14px;
+    line-height: 21px;
+    padding-top: 27px;
+}
+article video{
+    width: 100%;
+    padding-top: 9px;
+}
+article audio{
+    width: 100%;
+    padding-bottom: 40px;
+    margin-top: -5px;
+}
+aside{
+    width: 240px;
+    float: right;
+}
+aside .sidebar{
+    background: #fff;
+    padding: 0 20px;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
+    border-radius: 7px;
+    margin-bottom: 27px;
+}
+.sidebar h3{
+    font-size: 15px;
+    color: #000400;
+    height: 36px;
+    line-height: 36px;
+}
+.sidebar li{
+    height: 30px;
+    line-height: 30px;
+    font-size: 14px;
+    border-top: 1px solid #ededed;
+}
+.sidebar li a{
+    color: #060000;
+}
+select .clear{
+    clear: both;
+}
+footer{
+    width: 100%;
+    margin:0px auto;
+    height: 50px;
+    float: left;
+}
+footer p{
+    text-align: center;
+    font-size: 14px;
+    color: #606463;
+    line-height: 21px;
+    padding: 16px 0 29px 0;
+}

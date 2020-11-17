@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="cao" height="600" width="300" style="border: 1px solid black;">
+    </canvas>
+    <script>
+    	var la=document.getElementById("cao");
+    	var cao=la.getContext("2d");
+//  	cao.beginPath();
+//      cao.arc(96,100,76,0,1*Math.PI, false);
+//      cao.strokeStyle="black";
+//      cao.stroke();
+//  	
+//  	
+//  	
+//  	cao.beginPath();
+//  	cao.moveTo(20,103);
+//  	cao.bezierCurveTo(50,20,150,190,173,100);
+//  	cao.quadraticCurveTo(90,-60,19,100);
+//  	cao.fillStyle="black";
+//  	cao.fill();
+//  	cao.strokeStyle="black";
+//  	cao.stroke();
+//  	
+//  	cao.beginPath();
+//  	cao.arc(140,100,10,0,2*Math.PI,false);
+//  	cao.fillStyle="white";
+//  	cao.fill();
+//  	
+    	
+    	cao.beginPath();
+    	cao.arc(150,300,100,0,2*Math.PI,false);
+    	cao.strokeStyle="black";
+    	cao.stroke();
+    	
+    	
+    	
+    	
+    	
+    	cao.beginPath();
+    	cao.arc(150,300,100,0,1*Math.PI,false);
+    	moveTo(100,300);
+    	cao.bezierCurveTo(150,200,150,400,250,300)
+    	cao.fillStyle="black";
+        cao.fill();    
+        
+        cao.beginPath();
+        cao.arc(100,300,10,0,2*Math.PI,false);
+        cao.fillStyle="white";
+        cao.fill();
+        
+        cao.beginPath();
+        cao.arc(200,300,10,0,2*Math.PI,false);
+        cao.fillStyle="black";
+        cao.fill();
+    	
+    </script>
+</body>
+</html>
